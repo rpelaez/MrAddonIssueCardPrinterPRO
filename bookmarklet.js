@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "1.6 (4.7.4)";
+  global.version = "1.7 (4.7.4)";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -363,6 +363,10 @@
     var settings = global.settings;
     var printFrame = global.printFrame
 
+	//Header
+   	if (global.settings.setHeader != "" &&  global.settings.setHeader != null) {
+    	printFrame.document.find('.author').text(global.settings.setHeader);
+    }
     // hide/show description
     $(".issue-description", printFrame.document).toggle(!settings.hideDescription);
     // hide/show assignee
