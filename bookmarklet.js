@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.3";
+  global.version = "2.4";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -363,18 +363,27 @@
     //Special Customfields
     //S1
    	if (global.settings.s1 != "" &&  global.settings.s1 != null &&  global.settings.s1 != "null") {
-   		if (data.s1)
+   		if (data.s1) {
     		card.find('.issue-s1').text(data.s1);
+    	} else {
+      		card.find(".issue-s1").remove();
+    	}
     }
     //S2
    	if (global.settings.s2 != "" &&  global.settings.s2 != null &&  global.settings.s2 != "null") {
-    	if (data.s2)
+    	if (data.s2) {
     		card.find('.issue-s2').text(data.s2);
+    	} else {
+      		card.find(".issue-s2").remove();
+    	}
     }
     //S3
    	if (global.settings.s3 != "" &&  global.settings.s3 != null &&  global.settings.s3 != "null") {
-    	if (data.s3)
+    	if (data.s3) {
     		card.find('.issue-s3').text(data.s3);
+    	} else {
+      		card.find(".issue-s3").remove();
+    	}
     }
 
     //QR-Code
