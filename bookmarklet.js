@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "1.9 (4.7.4)";
+  global.version = "1.9.1 (4.7.4)";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -1626,12 +1626,12 @@
          cursor: pointer;
          background-color: #DEDEDE;
          border: 1px solid #D4D4D4;
-         border-radius: 3px;
+         border-radius: 2px;
          display: inline-block;
          font-size: 13px;
          font-weight: 700;
-         padding: 5.8px 20px;
-         margin: 0px 2px;
+         padding: 0.8px 10px;
+         margin: 0px 1px;
          text-decoration: none;
          text-align: center;
      }
