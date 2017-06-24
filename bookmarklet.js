@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "1.9.1 (4.7.4)";
+  global.version = "2.1";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -1442,13 +1442,13 @@
      <div id="card-print-overlay">
        <div id="card-print-dialog">
          <div id="card-print-dialog-header">
-           <div id="card-print-dialog-title">Issue Card Printer for JIRA</div>
+           <div id="card-print-dialog-title">Issue Card Printer</div>
            <div id="info">
              <label id="info-line"><b></b></label>
-             <div id="set-header" class="ui-element button" >Set Header</div>
-             <div id="set-s1" class="ui-element button" >Switch 1</div>
-             <div id="set-s2" class="ui-element button" >Switch 2</div>
-             <div id="set-s3" class="ui-element button" >Switch 3</div>
+             <div id="set-header" class="ui-element button" >Header</div>
+             <div id="set-s1" class="ui-element button" >Sw.1</div>
+             <div id="set-s2" class="ui-element button" >Sw.2</div>
+             <div id="set-s3" class="ui-element button" >Sw.3</div>
              <div id="report-issue" class="ui-element button" >Support</div>
              <div id="about" class="ui-element button" >MrAddon®</div>
              <div id="qoomon" class="ui-element button" >Qoomon©</div>
