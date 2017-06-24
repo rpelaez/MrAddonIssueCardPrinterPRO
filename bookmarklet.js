@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.3";
+  global.version = "2.4";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -822,6 +822,27 @@
             if (key.startsWith("customfield_")) {
               var fieldName = value.toCamelCase();
               var fieldValue = responseData.fields[key];
+              
+              //Switch field s1
+   			  if (global.settings.s1 != "" &&  global.settings.s1 != null &&  global.settings.s1 != "null") {
+    			if (key == global.settings.s1){
+                  fieldName = 'epicLink'
+                }
+    		  }
+    		  
+    		  //Switch field s2
+   			  if (global.settings.s2 != "" &&  global.settings.s2 != null &&  global.settings.s2 != "null") {
+    			if (key == global.settings.s2){
+                  fieldName = 'epicName'
+                }
+    		  }
+    		  
+    		  //Switch field s3
+   			  if (global.settings.s3 != "" &&  global.settings.s3 != null &&  global.settings.s3 != "null") {
+    			if (key == global.settings.s3){
+                  fieldName = 'storyPoints'
+                }
+    		  }
 
               //deposit-solutions specific field mapping
               if(/.*\.deposit-solutions.com/g.test(window.location.hostname)){
