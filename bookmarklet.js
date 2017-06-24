@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "1.4 (4.7.4)";
+  global.version = "1.5 (4.7.4)";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -271,7 +271,7 @@
   function fillCard(card, data) {
   
    	//Header
-    card.find('.author').text('jajajajajaaj');
+    card.find('.author').text(global.settings.setHeader);
 
     //Key
     card.find('.issue-id').text(data.key);
