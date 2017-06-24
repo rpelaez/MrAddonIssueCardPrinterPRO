@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.0";
+  global.version = "2.1";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -363,15 +363,18 @@
     //Special Customfields
     //S1
    	if (global.settings.s1 != "" &&  global.settings.s1 != null &&  global.settings.s1 != "null") {
-    	card.find('.issue-s1').text(global.settings.s1);
+   		if (data.s1)
+    		card.find('.issue-s1').text(data.s1);
     }
     //S2
    	if (global.settings.s2 != "" &&  global.settings.s2 != null &&  global.settings.s2 != "null") {
-    	card.find('.issue-s2').text(global.settings.s2);
+    	if (data.s2)
+    		card.find('.issue-s2').text(data.s2);
     }
     //S3
    	if (global.settings.s3 != "" &&  global.settings.s3 != null &&  global.settings.s3 != "null") {
-    	card.find('.issue-s3').text(global.settings.s3);
+    	if (data.s3)
+    		card.find('.issue-s3').text(data.s3);
     }
 
     //QR-Code
@@ -819,7 +822,7 @@
 
           issueData.url = module.baseUrl() + "/browse/" + issueData.key;
 
-		  //alert( data.fields.s1 + " o " + data.fields.s2 + " o " + data.fields.s3 );
+		  alert( data.fields.s1 + " o " + data.fields.s2 + " o " + data.fields.s3 );
 		  issueData.s1 = data.fields.s1
 		  issueData.s2 = data.fields.s2
 		  issueData.s3 = data.fields.s3
