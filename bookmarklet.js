@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.2";
+  global.version = "2.3";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -822,7 +822,7 @@
 
           issueData.url = module.baseUrl() + "/browse/" + issueData.key;
 
-		  alert( data.fields.s1 + " o " + data.fields.s2 + " o " + data.fields.s3 );
+		  //alert( data.fields.s1 + " o " + data.fields.s2 + " o " + data.fields.s3 );
 		  issueData.s1 = data.fields.s1
 		  issueData.s2 = data.fields.s2
 		  issueData.s3 = data.fields.s3
@@ -1432,6 +1432,8 @@
        position: absolute;
        left: 5rem;
        top: 0rem;
+       padding-left: 0.2rem;
+       padding-right: 0.2rem;
      }
      .issue-components {
        font-size: 0.6rem;
@@ -1440,6 +1442,8 @@
        position: absolute;
        left: 5rem;
        top: 1rem;
+       padding-left: 0.2rem;
+       padding-right: 0.2rem;
      }
      .issue-s1 {
        font-size: 0.6rem;
@@ -1447,7 +1451,9 @@
        max-width: 10rem;
        position: absolute;
        left: 9rem;
-       top: 0rem;
+       top: 1rem;
+       padding-left: 0.2rem;
+       padding-right: 0.2rem;
      }
      .issue-s2 {
        font-size: 0.6rem;
@@ -1455,7 +1461,9 @@
        max-width: 10rem;
        position: absolute;
        left: 9rem;
-       top: 1rem;
+       top: 2rem;
+       padding-left: 0.2rem;
+       padding-right: 0.2rem;
      }
      .issue-s3 {
        font-size: 0.6rem;
@@ -1463,7 +1471,9 @@
        max-width: 10rem;
        position: absolute;
        left: 9rem;
-       top: 2rem;
+       top: 3rem;
+       padding-left: 0.2rem;
+       padding-right: 0.2rem;
      }
      .issue-due-date-box {
        position: absolute;
