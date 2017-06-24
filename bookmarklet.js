@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.0";
+  global.version = "2.2";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -362,30 +362,24 @@
     
     //Special Customfields
     //S1
-   	if (global.settings.s1 != "" &&  global.settings.s1 != null &&  global.settings.s1 != "null") {
    		if (data.s1) {
     		card.find('.issue-s1').text(data.s1);
     	} else {
       		card.find(".issue-s1").remove();
     	}
-    }
     //S2
-   	if (global.settings.s2 != "" &&  global.settings.s2 != null &&  global.settings.s2 != "null") {
-    	if (data.s2) {
+   		if (data.s2) {
     		card.find('.issue-s2').text(data.s2);
     	} else {
       		card.find(".issue-s2").remove();
     	}
-    }
     //S3
-   	if (global.settings.s3 != "" &&  global.settings.s3 != null &&  global.settings.s3 != "null") {
-    	if (data.s3) {
+   		if (data.s3) {
     		card.find('.issue-s3').text(data.s3);
     	} else {
       		card.find(".issue-s3").remove();
     	}
-    }
-
+    
     //QR-Code
     var qrCodeUrl = 'https://chart.googleapis.com/chart?cht=qr&chs=256x256&chld=L|1&chl=' + encodeURIComponent(data.url);
     card.find(".issue-qr-code").css("background-image", "url('" + qrCodeUrl + "')");
@@ -411,8 +405,7 @@
     $(".issue-reporter", printFrame.document).toggle(!settings.hideReporter);
     // hide/show components
     $(".issue-components", printFrame.document).toggle(!settings.hideComponents);
-
-
+	
     // enable/disable single card page
     $(".card", printFrame.document).css({ 'page-break-after' : '', 'float' : '', 'margin-bottom': '' });
     if (settings.singleCardPage) {
@@ -832,9 +825,15 @@
           issueData.url = module.baseUrl() + "/browse/" + issueData.key;
 
 		  //alert( data.fields.s1 + " o " + data.fields.s2 + " o " + data.fields.s3 );
-		  issueData.s1 = data.fields.s1
-		  issueData.s2 = data.fields.s2
-		  issueData.s3 = data.fields.s3
+		  if (global.settings.s1 != "" &&  global.settings.s1 != null &&  global.settings.s1 != "null") {
+		  	issueData.s1 = data.fields.s1
+		  }
+		  if (global.settings.s2 != "" &&  global.settings.s2 != null &&  global.settings.s2 != "null") {
+		  	issueData.s2 = data.fields.s2
+		  }
+		  if (global.settings.s3 != "" &&  global.settings.s3 != null &&  global.settings.s3 != "null") {
+		  	issueData.s3 = data.fields.s3
+		  }
 		  
           return Promise.all(promises);
         }));
