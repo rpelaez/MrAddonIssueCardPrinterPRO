@@ -8,7 +8,7 @@
 
   var global = {};
   global.version = "1.2 (4.7.4)";
-  global.issueTrackingUrl = "github.com/rpelaez/Jira-Issue-Card-Printer";
+  global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
 
@@ -1279,7 +1279,7 @@
        height: 2.2rem;
        border-radius: 50%;
        background-color: WHITESMOKE;
-       background-image: url(https://rpelaez.github.io/Jira-Issue-Card-Printer/resources/icons/ninja.png);
+       //background-image: url(https://rpelaez.github.io/Jira-Issue-Card-Printer/resources/icons/ninja.png);
        background-repeat: no-repeat;
        background-position: center;
        background-size: cover;
@@ -1298,7 +1298,7 @@
        height: 2.2rem;
        border-radius: 50%;
        background-color: WHITESMOKE;
-       background-image: url(https://rpelaez.github.io/Jira-Issue-Card-Printer/resources/icons/ninja.png);
+       //background-image: url(https://rpelaez.github.io/Jira-Issue-Card-Printer/resources/icons/ninja.png);
        background-repeat: no-repeat;
        background-position: center;
        background-size: cover;
