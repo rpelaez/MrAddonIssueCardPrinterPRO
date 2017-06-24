@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "1.5 (4.7.4)";
+  global.version = "1.6 (4.7.4)";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -271,7 +271,9 @@
   function fillCard(card, data) {
   
    	//Header
-    card.find('.author').text(global.settings.setHeader);
+   	if (global.settings.setHeader != "" &&  global.settings.setHeader != null) {
+    	card.find('.author').text(global.settings.setHeader);
+    }
 
     //Key
     card.find('.issue-id').text(data.key);
@@ -467,8 +469,8 @@
     var result = $('<div/>').html(global.printPreviewHtml).contents();
 
     // info
-    result.find("#set-header").click(function(event) {
-      global.settings.setHeader = "MrAddon";
+    result.find("#set-header").click(function(event) { 
+      global.settings.setHeader = prompt("Write the header. Let empty to reset.");;
       saveSettings();
       redrawCards();
       return true;
