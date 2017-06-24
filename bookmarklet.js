@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "1.3 (4.7.4)";
+  global.version = "1.4 (4.7.4)";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -154,6 +154,7 @@
     writeCookie("card_printer_row_count", settings.rowCount);
     writeCookie("card_printer_column_count", settings.colCount);
 
+	writeCookie("card_printer_set_header", settings.setHeader);
     writeCookie("card_printer_single_card_page", settings.singleCardPage);
     writeCookie("card_printer_hide_description", settings.hideDescription);
     writeCookie("card_printer_hide_assignee", settings.hideAssignee);
@@ -171,6 +172,7 @@
     settings.rowCount = parseInt(readCookie("card_printer_row_count")) || 2;
     settings.colCount = parseInt(readCookie("card_printer_column_count")) || 1;
 
+	settings.setHeader = readCookie("card_printer_set_header");
     settings.singleCardPage = parseBool(readCookie("card_printer_single_card_page"), true );
     settings.hideDescription = parseBool(readCookie("card_printer_hide_description"), false);
     settings.hideAssignee = parseBool(readCookie("card_printer_hide_assignee"), false);
@@ -267,6 +269,10 @@
   }
 
   function fillCard(card, data) {
+  
+   	//Header
+    card.find('.author').text('jajajajajaaj');
+
     //Key
     card.find('.issue-id').text(data.key);
 
@@ -461,6 +467,13 @@
     var result = $('<div/>').html(global.printPreviewHtml).contents();
 
     // info
+    result.find("#set-header").click(function(event) {
+      global.settings.setHeader = "MrAddon";
+      saveSettings();
+      redrawCards();
+      return true;
+    });
+    
     result.find("#report-issue").click(function(event) {
       window.open('https://jirasupport.atlassian.net/servicedesk/customer/portal/1');
       return false;
@@ -1409,6 +1422,7 @@
            <div id="card-print-dialog-title">Issue Card Printer for JIRA</div>
            <div id="info">
              <label id="info-line"><b></b></label>
+             <div id="set-header" class="ui-element button" >Set Header</div>
              <div id="report-issue" class="ui-element button" >Support</div>
              <div id="about" class="ui-element button" >MrAddon®</div>
              <div id="qoomon" class="ui-element button" >Qoomon©</div>
