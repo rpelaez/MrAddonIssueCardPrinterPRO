@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.9";
+  global.version = "2.0";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -1075,6 +1075,9 @@
            <div class="issue-id-fadeout"></div>
            <div class="issue-icon badge" type="loading"></div>
            <div class="issue-estimate badge"></div>
+           <div class="issue-s1 badge"></div>
+           <div class="issue-s2 badge"></div>
+           <div class="issue-s3 badge"></div>
            <div class="issue-due-box">
              <div class="issue-due-date badge"></div>
              <div class="issue-due-icon badge"></div>
@@ -1091,9 +1094,6 @@
            </div>
            <div class="issue-labels badge"></div>
            <div class="issue-components badge"></div>
-           <div class="issue-s1 badge"></div>
-           <div class="issue-s2 badge"></div>
-           <div class="issue-s3 badge"></div>
          </div>
        </div>
      </div>
