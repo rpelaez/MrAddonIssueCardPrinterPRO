@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "1.8 (4.7.4)";
+  global.version = "1.9 (4.7.4)";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -472,7 +472,27 @@
     result.find("#set-header").click(function(event) { 
       global.settings.setHeader = prompt("Write the header. Let empty to reset.");;
       saveSettings();
-      redrawCards();
+      main();
+      return true;
+    });
+    
+    result.find("#set-s1").click(function(event) { 
+      global.settings.s1 = prompt("Actual Value :'" + global.settings.s1 + "'. Now you can switch the value of the field for the value of a customfield, just write 'customfield_xxx'. Let empty to reset.");;
+      saveSettings();
+      main();
+      return true;
+    });
+    
+    result.find("#set-s2").click(function(event) { 
+      global.settings.s2 = prompt("Actual Value :'" + global.settings.s2 + "'. Now you can switch the value of the field for the value of a customfield, just write 'customfield_xxx'. Let empty to reset.");;
+      saveSettings();
+      main();
+      return true;
+    });
+    
+    result.find("#set-s3").click(function(event) { 
+      global.settings.s3 = prompt("Actual Value :'" + global.settings.s3 + "'. Now you can switch the value of the field for the value of a customfield, just write 'customfield_xxx'. Let empty to reset.");;
+      saveSettings();
       main();
       return true;
     });
@@ -1426,6 +1446,9 @@
            <div id="info">
              <label id="info-line"><b></b></label>
              <div id="set-header" class="ui-element button" >Set Header</div>
+             <div id="set-s1" class="ui-element button" >Switch 1</div>
+             <div id="set-s2" class="ui-element button" >Switch 2</div>
+             <div id="set-s3" class="ui-element button" >Switch 3</div>
              <div id="report-issue" class="ui-element button" >Support</div>
              <div id="about" class="ui-element button" >MrAddon®</div>
              <div id="qoomon" class="ui-element button" >Qoomon©</div>
