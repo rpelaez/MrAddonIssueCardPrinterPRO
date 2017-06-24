@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.8";
+  global.version = "2.9";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -358,6 +358,20 @@
       card.find(".issue-epic-name").text(data.superIssue.summary);
     } else {
       card.find(".issue-epic-box").remove();
+    }
+    
+    //Special Customfields
+    //S1
+   	if (global.settings.s1 != "" &&  global.settings.s1 != null &&  global.settings.s1 != "null") {
+    	card.find('.issue-s1').text(global.settings.s1);
+    }
+    //S2
+   	if (global.settings.s2 != "" &&  global.settings.s2 != null &&  global.settings.s2 != "null") {
+    	card.find('.issue-s2').text(global.settings.s2);
+    }
+    //S3
+   	if (global.settings.s3 != "" &&  global.settings.s3 != null &&  global.settings.s3 != "null") {
+    	card.find('.issue-s3').text(global.settings.s3);
     }
 
     //QR-Code
@@ -788,6 +802,7 @@
           	issueData.components = issueData.components + "," + data.fields.components[1].name;
           } 
 
+		  
           if (data.fields.parent) {
             promises.push(module.getIssueData(data.fields.parent.key).then(function(data) {
               issueData.superIssue = {};
@@ -804,8 +819,11 @@
 
           issueData.url = module.baseUrl() + "/browse/" + issueData.key;
 
-		  //CustomFields
-		  alert( data.fields.s1 + " o " + data.fields.s2 + " o " + data.fields.s3 );
+		  //alert( data.fields.s1 + " o " + data.fields.s2 + " o " + data.fields.s3 );
+		  issueData.s1 = data.fields.s1
+		  issueData.s2 = data.fields.s2
+		  issueData.s3 = data.fields.s3
+		  
           return Promise.all(promises);
         }));
 
@@ -1073,6 +1091,9 @@
            </div>
            <div class="issue-labels badge"></div>
            <div class="issue-components badge"></div>
+           <div class="issue-s1 badge"></div>
+           <div class="issue-s2 badge"></div>
+           <div class="issue-s3 badge"></div>
          </div>
        </div>
      </div>
@@ -1416,6 +1437,30 @@
        position: absolute;
        left: 5rem;
        top: 1rem;
+     }
+     .issue-s1 {
+       font-size: 0.6rem;
+       font-weight: bold;
+       max-width: 10rem;
+       position: absolute;
+       left: 5rem;
+       top: 2rem;
+     }
+     .issue-s2 {
+       font-size: 0.6rem;
+       font-weight: bold;
+       max-width: 10rem;
+       position: absolute;
+       left: 5rem;
+       top: 3rem;
+     }
+     .issue-s3 {
+       font-size: 0.6rem;
+       font-weight: bold;
+       max-width: 10rem;
+       position: absolute;
+       left: 5rem;
+       top: 4rem;
      }
      .issue-due-date-box {
        position: absolute;
