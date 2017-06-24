@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.4";
+  global.version = "2.5";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -824,7 +824,9 @@
               var fieldValue = responseData.fields[key];
               
               //Switch field s1
+              alert(readCookie("card_printer_s1"));
    			  if (global.settings.s1 != "" &&  global.settings.s1 != null &&  global.settings.s1 != "null") {
+   			  alert("llego");
     			if (key == global.settings.s1){
                   fieldName = 'epicLink'
                 }
