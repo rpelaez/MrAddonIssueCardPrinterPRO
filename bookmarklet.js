@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.2";
+  global.version = "2.3";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -154,6 +154,9 @@
     writeCookie("card_printer_row_count", settings.rowCount);
     writeCookie("card_printer_column_count", settings.colCount);
 
+	writeCookie("card_printer_s1", settings.s1);
+	writeCookie("card_printer_s2", settings.s2);
+	writeCookie("card_printer_s3", settings.s3);
 	writeCookie("card_printer_set_header", settings.setHeader);
     writeCookie("card_printer_single_card_page", settings.singleCardPage);
     writeCookie("card_printer_hide_description", settings.hideDescription);
@@ -172,6 +175,9 @@
     settings.rowCount = parseInt(readCookie("card_printer_row_count")) || 2;
     settings.colCount = parseInt(readCookie("card_printer_column_count")) || 1;
 
+	settings.s1 = readCookie("card_printer_s1");
+	settings.s2 = readCookie("card_printer_s2");
+	settings.s3 = readCookie("card_printer_s3");
 	settings.setHeader = readCookie("card_printer_set_header");
     settings.singleCardPage = parseBool(readCookie("card_printer_single_card_page"), true );
     settings.hideDescription = parseBool(readCookie("card_printer_hide_description"), false);
@@ -1445,10 +1451,10 @@
            <div id="card-print-dialog-title">Issue Card Printer</div>
            <div id="info">
              <label id="info-line"><b></b></label>
-             <div id="set-header" class="ui-element button" >HEADER</div>
-             <div id="set-s1" class="ui-element button" >SWITCH1</div>
-             <div id="set-s2" class="ui-element button" >SWITCH2</div>
-             <div id="set-s3" class="ui-element button" >SWITCH3</div>
+             <div id="set-header" class="ui-element button" >Header</div>
+             <div id="set-s1" class="ui-element button" >Sw.1</div>
+             <div id="set-s2" class="ui-element button" >Sw.2</div>
+             <div id="set-s3" class="ui-element button" >Sw.3</div>
              <div id="report-issue" class="ui-element button" >Support</div>
              <div id="about" class="ui-element button" >MrAddon®</div>
              <div id="qoomon" class="ui-element button" >Qoomon©</div>
