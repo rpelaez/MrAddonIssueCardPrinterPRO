@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "1.7 (4.7.4)";
+  global.version = "1.8 (4.7.4)";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -271,7 +271,7 @@
   function fillCard(card, data) {
   
    	//Header
-   	if (global.settings.setHeader != "" &&  global.settings.setHeader != null) {
+   	if (global.settings.setHeader != "" &&  global.settings.setHeader != null &&  global.settings.setHeader != "null") {
     	card.find('.author').text(global.settings.setHeader);
     }
 
@@ -363,10 +363,6 @@
     var settings = global.settings;
     var printFrame = global.printFrame
 
-	//Header
-   	if (global.settings.setHeader != "" &&  global.settings.setHeader != null) {
-    	printFrame.document.find('.author').text(global.settings.setHeader);
-    }
     // hide/show description
     $(".issue-description", printFrame.document).toggle(!settings.hideDescription);
     // hide/show assignee
@@ -477,6 +473,7 @@
       global.settings.setHeader = prompt("Write the header. Let empty to reset.");;
       saveSettings();
       redrawCards();
+      main();
       return true;
     });
     
