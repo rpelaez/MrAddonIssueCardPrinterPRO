@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.5";
+  global.version = "2.6";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -1155,7 +1155,7 @@
          width: 100%;
          border-style: solid;
          border-bottom-width: 0.5rem;
-         border-image: url(https://rawgit.com/qoomon/Jira-Issue-Card-Printer/develop/resources//Tearing.png);
+         border-image: url(https://rpelaez.github.io/Jira-Issue-Card-Printer/resources/Tearing.png);
          border-image-width: 0 0 0.7rem 0;
          border-image-slice: 56 0 56 1;
          border-image-repeat: round round;
@@ -1462,7 +1462,7 @@
        top: 1rem;
        padding-left: 0.2rem;
        padding-right: 0.2rem;
-       overflow: visible;
+       overflow: visible !important;
      }
      .issue-s2 {
        font-size: 0.6rem;
@@ -1473,7 +1473,7 @@
        top: 2rem;
        padding-left: 0.2rem;
        padding-right: 0.2rem;
-       overflow: visible;
+       overflow: visible !important;
      }
      .issue-s3 {
        font-size: 0.6rem;
@@ -1484,7 +1484,7 @@
        top: 3rem;
        padding-left: 0.2rem;
        padding-right: 0.2rem;
-       overflow: visible;
+       overflow: visible !important;
      }
      .issue-due-date-box {
        position: absolute;
