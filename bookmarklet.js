@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "3.0";
+  global.version = "3.1";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -1088,7 +1088,6 @@
            <div class="issue-estimate badge"></div>
            <div class="issue-s1 badge"></div>
            <div class="issue-s2 badge"></div>
-           <div class="issue-s3 badge"></div>
            <div class="issue-due-box">
              <div class="issue-due-date badge"></div>
              <div class="issue-due-icon badge"></div>
@@ -1103,6 +1102,7 @@
              <span class="issue-epic-id"></span><br>
              <span class="issue-epic-name"></span>
            </div>
+           <div class="issue-s3 badge"></div>
            <div class="issue-labels badge"></div>
            <div class="issue-components badge"></div>
          </div>
@@ -1436,7 +1436,7 @@
      .issue-labels {
        font-size: 0.6rem;
        font-weight: bold;
-       max-width: 10rem;
+       max-width: 40rem;
        position: absolute;
        left: 5rem;
        top: 0rem;
@@ -1446,7 +1446,7 @@
      .issue-components {
        font-size: 0.6rem;
        font-weight: bold;
-       max-width: 10rem;
+       max-width: 40rem;
        position: absolute;
        left: 5rem;
        top: 1rem;
@@ -1480,8 +1480,8 @@
        font-weight: bold;
        max-width: 40rem;
        position: absolute;
-       left: 10rem;
-       top: 3rem;
+       left: 5rem;
+       top: 0rem;
        padding-left: 0.2rem;
        padding-right: 0.2rem;
        overflow: visible !important;
