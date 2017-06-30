@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.8";
+  global.version = "2.9";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -1071,11 +1071,7 @@
    var resources = {};
    resources.cardHtml = multilineString(function(){/*
      <div class="card">
-       <div class="card-content">
-         <div class="card-body shadow">
-           <div class="issue-summary"></div>
-           <div class="issue-description"></div>
-         </div>
+       <div class="card-content">         
          <div class="card-header">
            <div class="author">
              <span>Qoomon.com & MrAddon.com</span>
@@ -1105,6 +1101,10 @@
            </div>
            <div class="issue-labels badge"></div>
            <div class="issue-components badge"></div>
+         </div>
+         <div class="card-body shadow">
+           <div class="issue-summary"></div>
+           <div class="issue-description"></div>
          </div>
        </div>
      </div>
