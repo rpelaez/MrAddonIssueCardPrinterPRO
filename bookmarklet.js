@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.4";
+  global.version = "2.5";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -1456,7 +1456,7 @@
      .issue-s1 {
        font-size: 0.6rem;
        font-weight: bold;
-       max-width: 10rem;
+       max-width: 40rem;
        position: absolute;
        left: 9rem;
        top: 1rem;
@@ -1467,7 +1467,7 @@
      .issue-s2 {
        font-size: 0.6rem;
        font-weight: bold;
-       max-width: 10rem;
+       max-width: 40rem;
        position: absolute;
        left: 9rem;
        top: 2rem;
@@ -1478,7 +1478,7 @@
      .issue-s3 {
        font-size: 0.6rem;
        font-weight: bold;
-       max-width: 10rem;
+       max-width: 40rem;
        position: absolute;
        left: 9rem;
        top: 3rem;
