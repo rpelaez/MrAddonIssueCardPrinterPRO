@@ -7,7 +7,7 @@
   }
 
   var global = {};
-  global.version = "2.2";
+  global.version = "2.3";
   global.issueTrackingUrl = "github.com/rpelaez/MrAddonIssueCardPrinterPRO";
 
   global.isDev = document.currentScript == null;
@@ -1242,7 +1242,7 @@
      
      .issue-description {
        margin-top: 0.1rem;
-       display: block;
+       //display: block;
        font-size: 0.6rem;
        line-height: 0.62rem;
        overflow: hidden;
